@@ -10,45 +10,51 @@
 
 /* /end */
 body {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/326221/bg.jpg);
+  background-image: url(https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-028-plum-plate.png);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 h3 {
-  position: relative;
-  left: 45%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 /* THE FRONT */
 .front {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/326221/bc-front.jpg);
+  background-color: black;
   background-size: cover;
+  
   border-radius: 25px;
-  box-shadow: 100px;
+  
 }
 
 /* /end */
 /* THE BACK */
 .back {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/326221/bc-back.jpg);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC);
   background-size: cover;
   border-radius: 25px;
-  box-shadow: 20px;
+  
+ 
 }
 .back h1, .back p, .back .font-a-icons {
   color: #000;
   font-family: "Lato";
   margin-left: 30%;
   line-height: 90%;
+  
 }
 .back h1 {
   margin-top: 5%;
 }
 .back p {
   font-size: 16px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   width: 35%;
   border-bottom: 2px solid #000;
 }
@@ -56,13 +62,18 @@ h3 {
   font-weight: bold;
 }
 .back .font-a-icons {
-  margin-top: 25px;
+  margin-top: 50px;
+  margin-right: 400px;
+  margin-left: 60px;
+  width: 60%;
+  
 }
 .back .font-a-icons .icon-group {
   margin-top: 8px;
 }
 .back .font-a-icons span, .back .font-a-icons .link, .back .font-a-icons .fa, .back .font-a-icons a {
-  color: #000;
+  
+  color: black;
 }
 .back .font-a-icons .fa {
   font-size: 18px;
@@ -79,9 +90,9 @@ h3 {
 .back .icon-box {
   position: relative;
   color: #000;
-  font-size: 24px;
-  height: 45px;
-  width: 45px;
+  font-size: 50px;
+  height: 40px;
+  width: 40px;
   padding: 5px;
   top: 75px;
   left: 30%;
@@ -94,31 +105,36 @@ h3 {
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
-.back .icon-box:hover {
-  box-shadow: inset 0 50px 0 0 #000;
-  color: #fff;
-}
 
-/* /end */
-/* THE FLIP EFFECT */
-/* entire container, keeps perspective */
+  .back .icon-box:hover, 
+  .back .icon-box:focus {
+    animation: fade 1s;
+    box-shadow: 0 0 0 0.20em rgba(0, 0, 0, 0.562);
+    opacity: 20;
+  }
+  
+  @keyframes icon-box {
+    0% { box-shadow: 0 0 0 0 var(--hover); }
+  }
+/* THE FLIP */
+
 .flip-container {
   perspective: 1000px;
 }
 
-/* flip the pane when hovered */
+/*hover*/
 .flip-container:hover .flipper, .flip-container.hover .flipper {
   transform: rotateY(180deg);
   cursor: pointer;
 }
 
 .flip-container, .front, .back {
-  height: 350px;
-  width: 600px;
+  height: 450px;
+  width: 700px;
 }
 
 .flipper {
-  transition: 0.5s;
+  transition: 0.2s;
   transform-style: preserve-3d;
   position: relative;
 }
